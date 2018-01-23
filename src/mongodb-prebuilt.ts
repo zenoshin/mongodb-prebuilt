@@ -9,12 +9,13 @@ export class MongoDBPrebuilt {
   private debug: any;
   private binPath: string;
   
-  constructor(public mongoDBDownload?: MongoDBDownload) {
+  constructor(public mongoDBDownload?: MongoDBDownload, version: string = 'latest') {
     this.debug = Debug('mongodb-prebuilt-MongoDBPrebuilt');
     
     if (this.mongoDBDownload === undefined) {
       this.mongoDBDownload = new MongoDBDownload({
-        downloadDir: this.getHomeDirectory()
+        downloadDir: this.getHomeDirectory(),
+        version
       });
     } 
   }

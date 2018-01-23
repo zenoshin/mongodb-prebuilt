@@ -3,6 +3,7 @@ import {resolve as resolvePath} from 'path';
 import {SpawnOptions, ChildProcess, spawn as spawnChild} from 'child_process';
 import {MongoDBPrebuilt} from './mongodb-prebuilt';
 import {MongoSupervise} from './mongodb-supervise';
+import {MongoDBDownload} from 'mongodb-download';
 
 export class MongoBins {
   command: string;
@@ -15,11 +16,12 @@ export class MongoBins {
   constructor(
     command: string, 
     public commandArguments: string[] = [],
-    public spawnOptions: SpawnOptions = {}
+    public spawnOptions: SpawnOptions = {},
+    version: string = 'latest'
   ) {
     this.debug = Debug(`mongodb-prebuilt-MongoBins`);
     this.command = command;
-    this.mongoDBPrebuilt = new MongoDBPrebuilt();
+    this.mongoDBPrebuilt = new MongoDBPrebuilt(undefined, version);
   }
   
   run(): Promise<boolean> {

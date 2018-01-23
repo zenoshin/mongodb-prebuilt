@@ -44,7 +44,7 @@
     "url": "https://github.com/winfinit/mongodb-prebuilt/issues"
   },
   "dependencies": {
-    "mongodb-download": "git+https://github.com/maxdome/mongodb-download.git",
+    "mongodb-download": "git+https://github.com/zenoshin/mongodb-download.git",
     "debug": "^2.2.0",
     "yargs": "^3.26.0",
     "glob": "^7.1.1",

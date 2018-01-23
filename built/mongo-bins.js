@@ -5,15 +5,16 @@ var path_1 = require("path");
 var child_process_1 = require("child_process");
 var mongodb_prebuilt_1 = require("./mongodb-prebuilt");
 var mongodb_supervise_1 = require("./mongodb-supervise");
-var MongoBins = (function () {
-    function MongoBins(command, commandArguments, spawnOptions) {
+var MongoBins = /** @class */ (function () {
+    function MongoBins(command, commandArguments, spawnOptions, version) {
         if (commandArguments === void 0) { commandArguments = []; }
         if (spawnOptions === void 0) { spawnOptions = {}; }
+        if (version === void 0) { version = 'latest'; }
         this.commandArguments = commandArguments;
         this.spawnOptions = spawnOptions;
         this.debug = Debug("mongodb-prebuilt-MongoBins");
         this.command = command;
-        this.mongoDBPrebuilt = new mongodb_prebuilt_1.MongoDBPrebuilt();
+        this.mongoDBPrebuilt = new mongodb_prebuilt_1.MongoDBPrebuilt(undefined, version);
     }
     MongoBins.prototype.run = function () {
         var _this = this;
@@ -71,4 +72,4 @@ var MongoBins = (function () {
     return MongoBins;
 }());
 exports.MongoBins = MongoBins;
-//# sourceMappingURL=/Users/winfinit/workspace/personal/mongodb-prebuilt/mongo-bins.js.map
+//# sourceMappingURL=/home/zeno/mongodb-prebuilt/mongo-bins.js.map

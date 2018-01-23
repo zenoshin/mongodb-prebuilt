@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { ChildProcess } from 'child_process';
 export declare class MongoSupervise {
     command: string;

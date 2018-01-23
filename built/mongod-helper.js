@@ -3,12 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var mongo_bins_1 = require("./mongo-bins");
 var Debug = require('debug');
 var COMMAND = "mongod";
-var MongodHelper = (function () {
-    function MongodHelper(commandArguments) {
+var MongodHelper = /** @class */ (function () {
+    function MongodHelper(commandArguments, version) {
         if (commandArguments === void 0) { commandArguments = []; }
+        if (version === void 0) { version = 'latest'; }
         this.resolveLink = function () { };
         this.rejectLink = function () { };
-        this.mongoBin = new mongo_bins_1.MongoBins(COMMAND, commandArguments);
+        this.mongoBin = new mongo_bins_1.MongoBins(COMMAND, commandArguments, {}, version);
         this.debug = Debug("mongodb-prebuilt-MongodHelper");
     }
     MongodHelper.prototype.run = function () {
@@ -74,4 +75,4 @@ var MongodHelper = (function () {
     return MongodHelper;
 }());
 exports.MongodHelper = MongodHelper;
-//# sourceMappingURL=/Users/winfinit/workspace/personal/mongodb-prebuilt/mongod-helper.js.map
+//# sourceMappingURL=/home/zeno/mongodb-prebuilt/mongod-helper.js.map

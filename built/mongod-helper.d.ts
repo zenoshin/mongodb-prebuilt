@@ -5,7 +5,7 @@ export declare class MongodHelper {
     debug: any;
     private resolveLink;
     private rejectLink;
-    constructor(commandArguments?: string[]);
+    constructor(commandArguments?: string[], version?: string);
     run(): Promise<boolean>;
     closeHandler(code: number): void;
     stderrHandler(message: string | Buffer): void;
